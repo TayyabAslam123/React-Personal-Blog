@@ -16,7 +16,7 @@ const Repos = () => {
     return (
         <>
             {loading ? (
-                <img className="" src="https://cdn.dribbble.com/users/3742211/screenshots/9195657/media/6796a544d6f9ef1293d8d8d9e60d38d5.gif" alt="Image" />
+                <img className="mx-auto d-block w-75 bg-primary img-fluid " src="https://cdn.dribbble.com/users/3742211/screenshots/9195657/media/6796a544d6f9ef1293d8d8d9e60d38d5.gif" alt="Image" />
             ) : (
                 <>
                     <div className="container py-5 px-2 bg-primary">
