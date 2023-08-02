@@ -11,7 +11,7 @@ const Main = () => {
                 <div id="blog-carousel" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img className="w-100" src="img/carousel-1.jpg" alt="Image" />
+                            <img className="w-100" src="/img/carousel-1.jpg" alt="Image" />
                             <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <h2 className="mb-3 text-white font-weight-bold">Read Tech Blog Below</h2>
                                 {/* <div className="d-flex text-white">
@@ -23,7 +23,7 @@ const Main = () => {
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img className="w-100" src="img/carousel-2.jpg" alt="Image" />
+                            <img className="w-100" src="/img/carousel-2.jpg" alt="Image" />
                             <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <h2 className="text-white font-weight-bold">Know About Me</h2>
                                 {/* <div className="d-flex">
@@ -36,7 +36,7 @@ const Main = () => {
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img className="w-100" src="img/carousel-3.jpg" alt="Image" />
+                            <img className="w-100" src="/img/carousel-3.jpg" alt="Image" />
                             <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <h2 className="text-white font-weight-bold">View My Repositories</h2>
                                 {/* <div className="d-flex">

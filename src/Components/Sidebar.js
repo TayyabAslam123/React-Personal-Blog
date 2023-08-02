@@ -5,9 +5,9 @@ const Sidebar = () => {
     // Show Resume
     const handleButtonClick = () => {
         Swal.fire({
-            imageUrl: 'https://d.novoresume.com/images/doc/minimalist-resume-template.png',
+            imageUrl: 'https://i.postimg.cc/0jhY60Bw/Tayyab-resume.png',
             imageHeight: 1000,
-            imageWidth: 1000,
+            imageWidth: 800,
             imageAlt: 'A tall image'
         })
     };

@@ -9,7 +9,9 @@ const Repos = () => {
     useEffect(() => {
         fetch('https://api.github.com/users/TayyabAslam123/repos?sort=created_at')
             .then(response => response.json())
-            .then(data => { setData(data); setLoading(false); })
+            .then(data => 
+                { setData(data);
+                 setLoading(false); })
             .catch(error => console.error(error));
     }, []);
 

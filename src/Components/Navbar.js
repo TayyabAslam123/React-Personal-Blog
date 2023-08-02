@@ -14,6 +14,7 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div className="navbar-nav m-auto">
                         <Link to="/" className="nav-item nav-link">Home</Link>
+                        <Link to="/portfolio" className="nav-item nav-link">Portfolio</Link>
                         <Link to="/about" className="nav-item nav-link">About</Link>
                         <Link to="/my-github-repositories" className="nav-item nav-link">Repositories</Link>
                         <Link to="/contact"  className="nav-item nav-link">Contact</Link>
