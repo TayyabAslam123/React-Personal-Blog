@@ -37,12 +37,12 @@ const Contact = () => {
                         <p>tayyabaslam771@gmail.com</p>
                     </div>
                 </div>
-                <div className="col-md-12 pb-5">
+                {/* <div className="col-md-12 pb-5">
                     <div className="contact-form">
                         <div id="success"></div>
                         <form name="sentMessage" id="contactForm" novalidate="novalidate">
                             <div className="control-group">
-                                <input type="text" className="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                <input type="text" className="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name"  />
                                 <p className="help-block text-danger"></p>
                             </div>
                             <div className="control-group">
@@ -62,7 +62,7 @@ const Contact = () => {
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> */}
             </div>
         </>
     )
