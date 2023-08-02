@@ -7,6 +7,7 @@ import About from './Components/About';
 import Navbar from './Components/Navbar';
 import Contact from './Components/Contact';
 import Repos from './Components/Repos';
+import Post from './Components/Post';
 import { Portfolio } from './Components/Portfolio';
 import {
   BrowserRouter as Router,
@@ -24,6 +25,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route exact path="/" element={<Main />} />
+            <Route exact path="/post/:id" element={<Post />} />
             <Route exact path="/portfolio" element={<Portfolio />} />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/my-github-repositories" element={<Repos />} />

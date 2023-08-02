@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import {
+    Link
+  } from "react-router-dom";
 
 const Posts = () => {
 
@@ -16,7 +19,7 @@ const Posts = () => {
     return (
         <>
             {loading ? (
-                <img className="" src="https://cdn.dribbble.com/users/3742211/screenshots/9195657/media/6796a544d6f9ef1293d8d8d9e60d38d5.gif" alt="Image" />
+                <img className="mx-auto d-block w-75 bg-primary img-fluid" src="https://cdn.dribbble.com/users/3742211/screenshots/9195657/media/6796a544d6f9ef1293d8d8d9e60d38d5.gif" alt="Image" />
             ) : (
                 <>
                     {blogs.map((blog) => (
@@ -38,7 +41,8 @@ const Posts = () => {
                                         dangerouslySetInnerHTML={{ __html: blog.excerpt.rendered }}
                                     />
                                 </p>
-                                <a className="btn btn-link p-0" href="">Read More <i className="fa fa-angle-right"></i></a>
+                               
+                                <Link className="btn btn-sm btn-outline-dark" to={`/post/${blog.id}`}>Show Details</Link>
                             </div>
                         </div>
                     ))}
