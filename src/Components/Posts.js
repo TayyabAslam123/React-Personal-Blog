@@ -10,7 +10,7 @@ const Posts = () => {
     const [loading, setLoading] = useState(true);
     //
     useEffect(() => {
-        fetch('https://www.techneeds.com/wp-json/wp/v2/posts?page=10&_embed=true')
+        fetch('https://startuppakistan.com.pk/wp-json/wp/v2/posts?page=10&_embed=true')
             .then(response => response.json())
             .then(data => { setData(data); setLoading(false); })
             .catch(error => console.error(error));
