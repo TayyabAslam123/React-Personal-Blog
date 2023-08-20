@@ -9,7 +9,7 @@ const Post = () => {
 
     const [loading, setLoading] = useState(true);
 
-    fetch('https://www.techneeds.com/wp-json/wp/v2/posts/' + id)
+    fetch('https://startuppakistan.com.pk/wp-json/wp/v2/posts/' + id)
         .then(response => response.json())
         .then(data => {
             setTitle(data.title.rendered);

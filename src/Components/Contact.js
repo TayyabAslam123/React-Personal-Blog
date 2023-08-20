@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { json } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Contact = () => {
@@ -9,72 +10,72 @@ const Contact = () => {
     const [message, setMessage] = useState("");
 
     // Form Submission
-    // const handleSubmit = (event) => {
+    const handleSubmit = (event) => {
 
-    //     event.preventDefault();
-    //     //
-    //     if (!name) {
-    //         Swal.fire('Name missing !');
-    //         return false;
-    //     }
-    //     if (!email) {
-    //         Swal.fire('Email missing !');
-    //         return false;
-    //     }
-    //     if (!subject) {
-    //         Swal.fire('Subject missing !');
-    //         return false;
-    //     }
-    //     if (!message) {
-    //         Swal.fire('Message missing !');
-    //         return false;
-    //     }
-    //     //
-
-    //     const formData = {'name':name, 'email':email, 'subject':subject, 'message':message}
-
-    //     console.log(formData);
-        
-    //     fetch('http://invoice-system.test/api/test', {
-    //         method: 'POST',
-    //         body: JSON.stringify({
-    //           name: 'foo',
-    //           email: 'bar',
-    //         }),
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json'
-    //         },
-    //       })
-    //         .then((response) => response.json())
-    //         .then((json) => console.log(json));
-
-
-    // }
-
-    let handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-          let res = await fetch("https://httpbin.org/post", {
-            method: "POST",
-            body: JSON.stringify({
-              name: name,
-              email: email,
-              mobileNumber: mobileNumber,
-            }),
-          });
-          let resJson = await res.json();
-          if (res.status === 200) {
-            setName("");
-            setEmail("");
-            setMessage("User created successfully");
-          } else {
-            setMessage("Some error occured");
-          }
-        } catch (err) {
-          console.log(err);
+        event.preventDefault();
+        //
+        if (!name) {
+            Swal.fire('Name missing !');
+            return false;
         }
-      };
+        if (!email) {
+            Swal.fire('Email missing !');
+            return false;
+        }
+        if (!subject) {
+            Swal.fire('Subject missing !');
+            return false;
+        }
+        if (!message) {
+            Swal.fire('Message missing !');
+            return false;
+        }
+        //
+
+        const formData = { 'name': name, 'email': email, 'subject': subject, 'message': message }
+
+        fetch('https://galaxy.net.pk/api/contact', {
+            method: 'POST',
+            body: JSON.stringify({
+                formData
+            }),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        })
+            .then((response) => response.json())
+            .then(
+                (json) =>{
+                    Swal.fire(json.message+' your query number is:'+ json.data);
+                    console.log(json.data);
+                });
+
+    }
+
+    // let handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //       let res =  fetch("https://galaxy.net.pk/api/contact", {
+    //         method: "GET",
+    //         body: JSON.stringify({
+    //             title: 'test product',
+    //             price: 13.5,
+    //             description: 'lorem ipsum set',
+    //             image: 'https://i.pravatar.cc',
+    //             category: 'electronic'
+    //         }),
+    //       });
+    //       let resJson = await res.json();
+    //       if (res.status === 200) {
+    //         alert('Form Submitted Successfully !');
+    //       } else {
+    //         alert("Some error occured");
+    //       }
+    //     } catch (err) {
+    //       console.log(err);
+    //     }
+    //   };
 
     return (
         <>
