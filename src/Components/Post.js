@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { dateFrmt } from '../Helper/helper';
 const Post = () => {
 
     const { id } = useParams();
     const [title, setTitle] = useState([]);
     const [created_at, setCreatedAt] = useState([]);
     const [content, setContent] = useState([]);
+    const [img, setImg] = useState([]);
 
     const [loading, setLoading] = useState(true);
 
@@ -16,6 +18,7 @@ const Post = () => {
             setCreatedAt(data.date);
             setContent(data.content.rendered);
             setLoading(false);
+            setImg(data.yoast_head_json.og_image[0].url);
         })
         .catch(error => console.error(error));
 
@@ -41,12 +44,16 @@ const Post = () => {
                         </div>
                     </div>
 
-                    <div className="container py-5 px-2 bg-white">
+                    <div className="container py-5 px-1 bg-white">
                         <div className="row px-4">
                             <div className="col-12">
-                                <h2 className="mb-3 font-weight-bold"> {title}</h2>
+                            <img className="img-fluid mb-5 mb-md-0"
+                                    src={img}
+                                    alt="Featured"
+                                />
+                                <h2 className="mt-3 mb-3 font-weight-bold"> {title}</h2>
                                 <div className="d-flex">
-                                    <p className="mr-3 text-muted"><i className="fa fa-calendar-alt"></i> {created_at}</p>
+                                    <p className="mr-3 text-muted"><i className="fa fa-calendar-alt"></i> {dateFrmt(created_at)}</p>
                                 </div>
                                 <p>
                                     <div

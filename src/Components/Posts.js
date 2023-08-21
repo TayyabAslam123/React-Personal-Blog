@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { dateFrmt } from '../Helper/helper';
 import {
     Link
-  } from "react-router-dom";
+} from "react-router-dom";
 
 const Posts = () => {
 
@@ -10,7 +11,7 @@ const Posts = () => {
     const [loading, setLoading] = useState(true);
     //
     useEffect(() => {
-        fetch('https://startuppakistan.com.pk/wp-json/wp/v2/posts?page=10&_embed=true')
+        fetch('https://startuppakistan.com.pk/wp-json/wp/v2/posts?page=1&_embed=true')
             .then(response => response.json())
             .then(data => { setData(data); setLoading(false); })
             .catch(error => console.error(error));
@@ -33,7 +34,7 @@ const Posts = () => {
                             <div className="col-md-7">
                                 <h5 className="px-md-3 bg-white font-weight-bold">{blog.title.rendered}</h5>
                                 <div className="d-flex mb-0">
-                                    <small className="mr-2 text-muted"><i className="fa fa-calendar-alt"></i> {blog.date}</small>
+                                    <small className="mr-2 text-muted"><i className="fa fa-calendar-alt"></i> {dateFrmt(blog.date)}</small>
                                     <small className="mr-2 text-muted"><i className="fa fa-folder"></i> {blog.type}</small>
                                 </div>
                                 <p>
@@ -41,7 +42,7 @@ const Posts = () => {
                                         dangerouslySetInnerHTML={{ __html: blog.excerpt.rendered }}
                                     />
                                 </p>
-                               
+
                                 <Link className="btn btn-sm btn-outline-dark" to={`/post/${blog.id}`}>Show Details</Link>
                             </div>
                         </div>
