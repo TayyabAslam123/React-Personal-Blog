@@ -48,8 +48,14 @@ const Contact = () => {
             .then(
                 (json) =>{
                     Swal.fire(json.message+' your query number is:'+ json.data);
-                    console.log(json.data);
                 });
+
+        // clear form        
+        setName('');        
+        setEmail('');
+        setSubject('');
+        setMessage('');
+
 
     }
 
