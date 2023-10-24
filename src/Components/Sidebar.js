@@ -15,7 +15,7 @@ const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="sidebar-text d-flex flex-column h-100 justify-content-center text-center">
-                <img className="mx-auto d-block w-75 bg-primary img-fluid rounded-circle mb-4 p-3" src="tayyab.jpg" alt="Image" />
+                <img className="mx-auto d-block w-75 bg-primary img-fluid rounded-circle mb-4 p-3" src="/tayyab.jpg" alt="Image" />
                 <h2 className="font-weight-bold">TAYYAB ASLAM</h2>
                 <p className="mb-4">
                     I am software engineer with 3+ years experience. I have done BSCS from Comsats, Pakistan. My interested areas are Smart business sol , E-commerce , KPI's , Implementing new ideas.

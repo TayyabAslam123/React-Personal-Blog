@@ -11,22 +11,24 @@ const Post = () => {
 
     const [loading, setLoading] = useState(true);
 
-    fetch('https://startuppakistan.com.pk/wp-json/wp/v2/posts/' + id)
-        .then(response => response.json())
-        .then(data => {
-            setTitle(data.title.rendered);
-            setCreatedAt(data.date);
-            setContent(data.content.rendered);
-            setLoading(false);
-            setImg(data.yoast_head_json.og_image[0].url);
-        })
-        .catch(error => console.error(error));
+    useEffect(() => {
+        fetch('https://startuppakistan.com.pk/wp-json/wp/v2/posts/' + id)
+            .then(response => response.json())
+            .then(data => {
+                setTitle(data.title.rendered);
+                setCreatedAt(data.date);
+                setContent(data.content.rendered);
+                setLoading(false);
+                setImg(data.yoast_head_json.og_image[0].url);
+            })
+            .catch(error => console.error(error));
+    }, []);    
 
 
     return (
         <>
             {loading ? (
-                <img className="mx-auto d-block w-75 bg-primary img-fluid" src="https://cdn.dribbble.com/users/3742211/screenshots/9195657/media/6796a544d6f9ef1293d8d8d9e60d38d5.gif" alt="Image" />
+                <img className="mx-auto d-block w-100 h-100 bg-primary img-fluid" src="https://cdn.dribbble.com/users/3742211/screenshots/9195657/media/6796a544d6f9ef1293d8d8d9e60d38d5.gif" alt="Image" />
             ) : (
                 <>
                     <div className="container py-5 px-2 bg-primary">
