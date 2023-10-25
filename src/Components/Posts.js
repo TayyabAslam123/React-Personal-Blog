@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { dateFrmt } from '../Helper/helper';
+import { dateFrmt, removeSpecialCharacters } from '../Helper/helper';
 import {
     Link
 } from "react-router-dom";
@@ -32,7 +32,7 @@ const Posts = () => {
                                 />
                             </div>
                             <div className="col-md-7">
-                                <h5 className="px-md-3 bg-white font-weight-bold">{blog.title.rendered}</h5>
+                                <h5 className="px-md-3 bg-white font-weight-bold">{removeSpecialCharacters(blog.title.rendered)}</h5>
                                 <div className="d-flex mb-0">
                                     <small className="mr-2 text-muted"><i className="fa fa-calendar-alt"></i> {dateFrmt(blog.date)}</small>
                                     <small className="mr-2 text-muted"><i className="fa fa-folder"></i> {blog.type}</small>

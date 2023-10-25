@@ -11,3 +11,7 @@ export function dateFrmt (originalDate){
     return formatted;
 }
 
+export function removeSpecialCharacters(input) {
+    // Use a regular expression to replace HTML entities with their corresponding characters
+    return input.replace(/&#\d+;/g, (match) => String.fromCharCode(match.slice(2, -1)));
+}

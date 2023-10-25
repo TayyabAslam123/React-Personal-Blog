@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { dateFrmt } from '../Helper/helper';
+import { dateFrmt, removeSpecialCharacters } from '../Helper/helper';
 const Post = () => {
 
     const { id } = useParams();
@@ -53,7 +53,7 @@ const Post = () => {
                                     src={img}
                                     alt="Featured"
                                 />
-                                <h2 className="mt-3 mb-3 font-weight-bold"> {title}</h2>
+                                <h2 className="mt-3 mb-3 font-weight-bold"> {removeSpecialCharacters(title)}</h2>
                                 <div className="d-flex">
                                     <p className="mr-3 text-muted"><i className="fa fa-calendar-alt"></i> {dateFrmt(created_at)}</p>
                                 </div>
